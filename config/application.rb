@@ -11,6 +11,7 @@ module VPKInfoSystem
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
     config.generators do |g|
       g.test_framework :rspec
     end
