@@ -1,6 +1,5 @@
 class EnterprisesController < ApplicationController
   before_action :set_enterprise, only: %i[show edit update destroy]
-
   def index
     @enterprises = Enterprise.all
   end
@@ -19,10 +18,10 @@ class EnterprisesController < ApplicationController
     respond_to do |format|
       if @enterprise.save
         format.html { redirect_to @enterprise, notice: 'Enterprise was successfully created.' }
-        format.json { render :show, status: :created, location: @enterprise }
+        Logger.instance.log('Enterprise was successfully created.')
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @enterprise.errors, status: :unprocessable_entity }
+        Logger.instance.log('Enterprise not created.')
       end
     end
   end
@@ -31,10 +30,10 @@ class EnterprisesController < ApplicationController
     respond_to do |format|
       if @enterprise.update(enterprise_params)
         format.html { redirect_to @enterprise, notice: 'Enterprise was successfully updated.' }
-        format.json { render :show, status: :ok, location: @enterprise }
+        Logger.instance.log('Enterprise was successfully updated.')
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @enterprise.errors, status: :unprocessable_entity }
+        Logger.instance.log("Enterprise wasn't successfully updated.")
       end
     end
   end
@@ -43,8 +42,8 @@ class EnterprisesController < ApplicationController
     @enterprise.destroy
     respond_to do |format|
       format.html { redirect_to enterprises_url, notice: 'Enterprise was successfully destroyed.' }
-      format.json { head :no_content }
     end
+    Logger.instance.log('Enterprise was successfully deleted.')
   end
 
   private
