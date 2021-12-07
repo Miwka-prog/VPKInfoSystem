@@ -1,3 +1,4 @@
+require Rails.root.join('app/services/logger.rb')
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
