@@ -1,0 +1,6 @@
+<%= simple_form_for(@enterprise, url: enterprises_path, method: :post) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :headquaters %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>

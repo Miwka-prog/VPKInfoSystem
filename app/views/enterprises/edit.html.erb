@@ -1,0 +1,11 @@
+<h1>Editing Enterprise</h1>
+
+<%= simple_form_for(@enterprise, url: enterprise_path(@enterprise), method: :patch) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :headquaters %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Show', @enterprise %> |
+<%= link_to 'Back', enterprises_path %>
