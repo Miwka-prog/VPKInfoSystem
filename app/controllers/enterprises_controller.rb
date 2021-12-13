@@ -4,7 +4,9 @@ class EnterprisesController < ApplicationController
     @enterprises = Enterprise.all
   end
 
-  def show; end
+  def show
+    @user_decorator = helpers.decorate(current_user)
+  end
 
   def new
     @enterprise = Enterprise.new

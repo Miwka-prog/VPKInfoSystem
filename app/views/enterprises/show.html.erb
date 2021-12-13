@@ -3,6 +3,7 @@
 <h1><%= @enterprise.title %></h1>
 <h3><%= @enterprise.headquaters %></h3>
 <p><%= @enterprise.description %></p>
+<h2>Owner: <%= @user_decorator.full_name %></h2>
 
 <%= link_to 'Edit', edit_enterprise_path(@enterprise) %> |
 <%= link_to 'Back', enterprises_path %>
