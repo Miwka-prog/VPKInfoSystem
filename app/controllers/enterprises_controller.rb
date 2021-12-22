@@ -46,6 +46,7 @@ class EnterprisesController < ApplicationController
       format.html { redirect_to enterprises_url, notice: 'Enterprise was successfully destroyed.' }
     end
     Logger.instance.log('Enterprise was successfully deleted.')
+    puts "greg"
   end
 
   private
