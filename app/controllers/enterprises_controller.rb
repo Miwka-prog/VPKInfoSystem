@@ -45,6 +45,7 @@ class EnterprisesController < ApplicationController
       format.html { redirect_to enterprises_url, notice: 'Enterprise was successfully destroyed.' }
       format.json { head :no_content }
     end
+    puts "gregr"
   end
 
   private
